@@ -1,0 +1,18 @@
+.projects-grid {
+  display: grid;
+  gap: 20px;
+
+  /* Responsive columns */
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(280px, 1fr)
+  );
+}
+
+.project-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  border-left: 5px solid royalblue;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}

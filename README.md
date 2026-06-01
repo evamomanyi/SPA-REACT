@@ -74,47 +74,45 @@ npm run build
 
 ```
 src/
+│
 ├── components/
-│   ├── Navbar.jsx          # Top nav with mobile hamburger + CTA
-│   ├── Hero.jsx            # Landing headline + marquee
-│   ├── SearchBar.jsx       # Search input + category tabs
-│   ├── ProjectGrid.jsx     # Filtered grid + empty state
-│   ├── ProjectCard.jsx     # Individual project card
-│   ├── AddProjectModal.jsx # Slide-in add-project form
-│   └── Footer.jsx          # Site footer
-├── context/
-│   └── ProjectContext.jsx  # useReducer-backed global state
-├── data/
-│   └── projects.js         # Seed data + category constants
+│   ├── Header.jsx
+│   ├── AddProject.jsx
+│   ├── SearchBar.jsx
+│   ├── ProjectCard.jsx
+│   └── ProjectList.jsx
+│
 ├── hooks/
-│   └── useDebounce.js      # Debounce hook for search input
+│   └── useProjects.js
+│
 ├── styles/
-│   ├── global.css          # CSS variables, reset, typography
-│   └── *.css               # Per-component stylesheets
-├── tests/
-│   ├── setup.js
-│   ├── ProjectContext.test.jsx
-│   ├── SearchBar.test.jsx
-│   ├── AddProjectModal.test.jsx
-│   ├── ProjectCard.test.jsx
-│   └── useDebounce.test.js
-└── App.jsx                 # Root component + modal state
+│   ├── Header.css
+│   ├── AddProject.css
+│   ├── SearchBar.css
+│   ├── ProjectCard.css
+│   └── App.css
+│
+├── App.jsx
+├── main.jsx
+└── index.css
 ```
 
 ---
 
-## Component Tree
+## Test Folder Structure
 
 ```
-App
-└── ProjectProvider (Context)
-    ├── Navbar              (onAddClick → opens modal)
-    ├── Hero                (static, no props)
-    ├── SearchBar           (reads/writes ProjectContext)
-    ├── ProjectGrid         (reads filteredProjects from Context)
-    │   └── ProjectCard × n (reads deleteProject from Context)
-    ├── AddProjectModal     (reads addProject from Context)
-    └── Footer              (static)
+src/
+│
+├── components/
+│
+├── tests/
+│   ├── Header.test.jsx
+│   ├── AddProject.test.jsx
+│   ├── SearchBar.test.jsx
+│   └── App.test.jsx
+│
+└── setupTests.js
 ```
 
 ---
